@@ -21,8 +21,8 @@ namespace WinFwk.UITools.Settings
             ActiveTabGradient = new GradientConfig();
             InactiveTabGradient = new GradientConfig();
 
-            ActiveCaptionGradient = new GradientConfig();
-            InactiveCaptionGradient = new GradientConfig();
+            ActiveCaptionGradient = new GradientConfig() { TextColor = SystemColors.ActiveCaptionText };
+            InactiveCaptionGradient = new GradientConfig() { TextColor = SystemColors.InactiveCaptionText };
         }
 
         [Category("__Global")]
