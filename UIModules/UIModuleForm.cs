@@ -186,6 +186,10 @@ namespace WinFwk.UIModules
             mainPanel.DockTopPortion = 120;
             this.msgBus.SendMessage(new UICommandRequest(this));
             // Link keyboard shortcuts to commands
+            if(commands == null)
+            {
+                return;
+            }
             foreach (var command in commands)
             {
                 if (command.Shortcut != Keys.None)
