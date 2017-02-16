@@ -58,7 +58,6 @@ namespace WinFwk.UITools.Workplace
                     }
                     break;
                 case ModuleEventType.Activated:
-                    tlvModules.SelectedObject = message.Module;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -68,6 +67,7 @@ namespace WinFwk.UITools.Workplace
             tlvModules.Roots = model.rootModules;
             tlvModules.CheckedObjects = checkedObjects;
             tlvModules.ExpandAll();
+            tlvModules.SelectedObject = message.Module;
         }
 
         public void HandleMessage(SummaryChangedMessage message)

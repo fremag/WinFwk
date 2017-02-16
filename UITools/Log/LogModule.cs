@@ -74,6 +74,11 @@ namespace WinFwk.UITools.Log
 
         private void OnCellClick(object sender, CellClickEventArgs e)
         {
+            if( e.Item == null || e.Item.RowObject == null)
+            {
+                return;
+            }
+
             var logMessage = model.GetObject(e.Item.RowObject);
             if (logMessage == null)
             {
