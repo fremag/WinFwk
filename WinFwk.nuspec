@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>fremag.WinFwk</id>
-    <version>1.0.1</version>
+    <version>1.0.4</version>
     <title>WinFwk</title>
     <authors>fremag</authors>
     <owners>fremag</owners>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/fremag/WinFwk</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A simple experimental framework for dockable extensible GUI </description>
-    <releaseNotes>Minor bug fixes</releaseNotes>
+    <releaseNotes>Minor bug fixes: fix assembly info and removed icons as content but embeded ressources</releaseNotes>
     <copyright>Copyright 2017</copyright>
     <tags>winforms dockable framework</tags>
   </metadata>
