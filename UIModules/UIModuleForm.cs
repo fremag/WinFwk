@@ -39,7 +39,6 @@ namespace WinFwk.UIModules
         protected UIModuleForm()
         {
             InitializeComponent();
-            ApplyColors(mainPanel, UISettings.Instance);
 
             msgBus.UiScheduler = TaskScheduler.FromCurrentSynchronizationContext();
             msgBus.Subscribe(this);
@@ -241,6 +240,11 @@ namespace WinFwk.UIModules
 
         private static void ApplyColors(DockPanel dockPanel, UISettings uiSettings)
         {
+            if(uiSettings == null)
+            {
+                return;
+            }
+
             var skin = dockPanel.Theme.Skin;
             if( skin == null)
             {
@@ -330,6 +334,7 @@ namespace WinFwk.UIModules
         private void UIModuleForm_Load(object sender, EventArgs e)
         {
             Text = string.Format("{0} {1} ({2})", Application.ProductName, Application.ProductVersion, Environment.Is64BitProcess ? "x64" : "x86");
+            ApplyColors(mainPanel, UISettings.Instance);
         }
 
         protected override bool ProcessCmdKey(ref Message message, Keys keys)
