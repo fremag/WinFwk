@@ -7,7 +7,7 @@ namespace WinFwk.UITools.Commands
     public class CommandMgrCommand : AbstractVoidUICommand
     {
 
-        public CommandMgrCommand() : base("Commands", "Open commands manager", UIToolBarSettings.Main.Name, Properties.Resources.update_contact_info)
+        public CommandMgrCommand() : base("Commands", "Open commands manager", UIToolBarSettings.Help.Name, Properties.Resources.update_contact_info)
         {
 
         }
