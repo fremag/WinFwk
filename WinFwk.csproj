@@ -144,6 +144,34 @@
     <Compile Include="UITools\Commands\ExportCommand.cs" />
     <Compile Include="UITools\Commands\CopyCommand.cs" />
     <Compile Include="UITools\Commands\IDataExportable.cs" />
+    <Compile Include="UITools\Configuration\AbstractModuleConfigEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UITools\Configuration\DefaultModuleConfigEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UITools\Configuration\DefaultModuleConfigEditor.Designer.cs">
+      <DependentUpon>DefaultModuleConfigEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UITools\Configuration\IConfigurableModule.cs" />
+    <Compile Include="UITools\Configuration\IModuleConfig.cs" />
+    <Compile Include="UITools\Configuration\IModuleConfigEditor.cs" />
+    <Compile Include="UITools\Configuration\RunConfigEditorCommand.cs" />
+    <Compile Include="UITools\Configuration\UIConfigEditorModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UITools\Configuration\UIConfigEditorModule.Designer.cs">
+      <DependentUpon>UIConfigEditorModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UITools\Configuration\UIConfigurableModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UITools\Configuration\UIConfigurationModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UITools\Configuration\UIConfigurationModule.Designer.cs">
+      <DependentUpon>UIConfigurationModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="UITools\ListViewHelpers.cs" />
     <Compile Include="UITools\PercentColumnAttribute.cs" />
     <Compile Include="UITools\DoubleColumnAttribute.cs" />
@@ -222,6 +250,12 @@
     <EmbeddedResource Include="UITools\Commands\CommandMgrModule.resx">
       <DependentUpon>CommandMgrModule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UITools\Configuration\DefaultModuleConfigEditor.resx">
+      <DependentUpon>DefaultModuleConfigEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UITools\Configuration\UIConfigEditorModule.resx">
+      <DependentUpon>UIConfigEditorModule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UITools\Log\LogMessageViewerModule.resx">
       <DependentUpon>LogMessageViewerModule.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,6 +296,12 @@
     <EmbeddedResource Include="Icons\update_contact_info.png" />
     <None Include="Resources\bin.png" />
     <None Include="Resources\arrow_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icons\Small\small_wrench_orange.png" />
+    <Content Include="Icons\Small\small_undo.png" />
+    <Content Include="Icons\undo.png" />
+    <Content Include="Icons\wrench_orange.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

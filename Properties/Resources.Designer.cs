@@ -223,6 +223,26 @@ namespace WinFwk.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap small_undo {
+            get {
+                object obj = ResourceManager.GetObject("small_undo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap small_wrench_orange {
+            get {
+                object obj = ResourceManager.GetObject("small_wrench_orange", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap text_exports {
             get {
                 object obj = ResourceManager.GetObject("text_exports", resourceCulture);
@@ -243,6 +263,16 @@ namespace WinFwk.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap undo {
+            get {
+                object obj = ResourceManager.GetObject("undo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap update_contact_info {
             get {
                 object obj = ResourceManager.GetObject("update_contact_info", resourceCulture);
@@ -256,6 +286,16 @@ namespace WinFwk.Properties {
         internal static System.Drawing.Bitmap update_contact_info_small {
             get {
                 object obj = ResourceManager.GetObject("update_contact_info_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wrench_orange {
+            get {
+                object obj = ResourceManager.GetObject("wrench_orange", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

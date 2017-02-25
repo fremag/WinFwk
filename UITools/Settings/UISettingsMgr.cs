@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows.Forms;
 using System.Xml.Serialization;
 using NLog;
 
@@ -50,6 +51,21 @@ namespace WinFwk.UITools.Settings
             {
                 xml.Serialize(reader, uiSettings);
             }
+        }
+
+        public static void Init()
+        {
+            Init(Application.ProductName);
+        }
+
+        public static void Load()
+        {
+            Load(Application.ProductName);
+        }
+
+        public static void Save(T uiSettings)
+        {
+            Save(Application.ProductName, uiSettings);
         }
 
         private static string GetConfigPath(string applicationName)
