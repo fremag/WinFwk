@@ -2,6 +2,8 @@
 using System.Threading;
 using System;
 using WinFwk.UITools.Log;
+using WeifenLuo.WinFormsUI.Docking;
+using WinFwk.UIMessages;
 
 namespace WinFwk.UIModules
 {
@@ -25,6 +27,11 @@ namespace WinFwk.UIModules
             var t2 = t1Bis.ContinueWith(t => InitModule(module));
             var t3 = t2.ContinueWith(t => PostInit(module), UiScheduler);
             var t4 = t3.ContinueWith(t => Finish(module, finish), UiScheduler);
+        }
+
+        public static void CreateModule<T>(Action<T> setup) where T : UIModule, new()
+        {
+            CreateModule<T>(setup, module => DockModule(module));
         }
 
         private static void Finish<T>(T module, Action<T> finish) where T : UIModule, new()
@@ -73,6 +80,11 @@ namespace WinFwk.UIModules
             {
                 MessageBus.Log(module, "Failed to setup module", ex);
             }
+        }
+
+        private static void DockModule(UIModule uiModule, DockState dockState = DockState.Document)
+        {
+            MessageBus.SendMessage(new DockRequest(uiModule, dockState));
         }
     }
 }

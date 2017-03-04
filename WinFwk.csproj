@@ -156,6 +156,8 @@
     <Compile Include="UITools\Configuration\IConfigurableModule.cs" />
     <Compile Include="UITools\Configuration\IModuleConfig.cs" />
     <Compile Include="UITools\Configuration\IModuleConfigEditor.cs" />
+    <Compile Include="UITools\Configuration\ModuleConfigurationService.cs" />
+    <Compile Include="UITools\Configuration\OpenModuleConfigurationEditorRequest.cs" />
     <Compile Include="UITools\Configuration\RunConfigEditorCommand.cs" />
     <Compile Include="UITools\Configuration\UIConfigEditorModule.cs">
       <SubType>UserControl</SubType>

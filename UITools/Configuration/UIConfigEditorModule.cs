@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using WinFwk.UIModules;
 
 namespace WinFwk.UITools.Configuration
@@ -25,9 +24,9 @@ namespace WinFwk.UITools.Configuration
             {
                 return;
             }
-            Name = "Config Editor";
+            Name = moduleConfig.GetType().Name;
             Icon = Properties.Resources.small_wrench_orange;
-            Summary = "test";
+            Summary = moduleConfig.ToString();
 
             original = moduleConfig;
             ResetEditor();
