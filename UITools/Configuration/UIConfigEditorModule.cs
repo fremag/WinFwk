@@ -8,6 +8,7 @@ namespace WinFwk.UITools.Configuration
         private IModuleConfig original;
         private IModuleConfig workingCopy;
         private IModuleConfigEditor editor;
+        private IConfigurableModule ownerModule;
 
         public UIConfigEditorModule()
         {
@@ -16,6 +17,7 @@ namespace WinFwk.UITools.Configuration
 
         public void Setup(IConfigurableModule module, IModuleConfig moduleConfig)
         {
+            ownerModule = module;
             // Todo : find something to avoid those cast / as
             UIModuleParent = module as UIModule;
             editor = module.CreateEditor();
@@ -24,19 +26,39 @@ namespace WinFwk.UITools.Configuration
             {
                 return;
             }
-            Name = moduleConfig.GetType().Name;
+            Name = moduleConfig?.GetType().Name;
             Icon = Properties.Resources.small_wrench_orange;
-            Summary = moduleConfig.ToString();
+            Summary = moduleConfig?.ToString();
 
             original = moduleConfig;
             ResetEditor();
             editorControl.Dock = DockStyle.Fill;
             toolStripContainer1.ContentPanel.Controls.Add(editorControl);
+
+            if(editor.EditorActions != null)
+            {
+                toolStrip1.Items.Add(new ToolStripSeparator());
+                foreach (var action in editor.EditorActions)
+                {
+                    ToolStripButton tsb = new ToolStripButton();
+                    tsb.ToolTipText = action.Text;
+                    tsb.Image = action.Icon;
+                    tsb.Click += (o, e) => action.DoWork();
+                    toolStrip1.Items.Add(tsb);
+                }
+            }
         }
 
         private void ResetEditor()
         {
-            workingCopy = original.Clone() as IModuleConfig;
+            if (original == null)
+            {
+                workingCopy = null;
+            }
+            else
+            {
+                workingCopy = original.Clone() as IModuleConfig;
+            }
             editor.Init(workingCopy);
         }
 
@@ -47,7 +69,7 @@ namespace WinFwk.UITools.Configuration
 
         private void tsbApply_Click(object sender, System.EventArgs e)
         {
-            workingCopy.OwnerModule.Apply(workingCopy);
+            ownerModule.Apply(workingCopy);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using WeifenLuo.WinFormsUI.Docking;
 using WinFwk.UICommands;
 using WinFwk.UIMessages;
 using WinFwk.UIModules;
@@ -23,16 +24,12 @@ namespace WinFwk.UITools.Configuration
         public static void RunConfigEditor(IConfigurableModule configurableModule, MessageBus messageBus)
         {
             var config = configurableModule.ModuleConfig;
-            if (config == null)
-            {
-                return;
-            }
             RunConfigEditor(configurableModule, messageBus, config);
         }
 
         public static void RunConfigEditor(IConfigurableModule configurableModule, MessageBus messageBus, IModuleConfig moduleConfig)
         {
-            UIModuleFactory.CreateModule<UIConfigEditorModule>(module => module.Setup(configurableModule, moduleConfig), module => DockModule(messageBus, module));
+            UIModuleFactory.CreateModule<UIConfigEditorModule>(module => module.Setup(configurableModule, moduleConfig), DockState.DockRight);
         }
     }
 }

@@ -144,9 +144,9 @@
     <Compile Include="UITools\Commands\ExportCommand.cs" />
     <Compile Include="UITools\Commands\CopyCommand.cs" />
     <Compile Include="UITools\Commands\IDataExportable.cs" />
-    <Compile Include="UITools\Configuration\AbstractModuleConfigEditor.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="UITools\Configuration\DefaultEditorAction.cs" />
+    <Compile Include="UITools\Configuration\IEditorAction.cs" />
+    <Compile Include="UITools\Configuration\ModuleConfigAdapter.cs" />
     <Compile Include="UITools\Configuration\DefaultModuleConfigEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
