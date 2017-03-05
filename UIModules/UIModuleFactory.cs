@@ -10,9 +10,9 @@ namespace WinFwk.UIModules
     public static class UIModuleFactory
     {
         private static TaskScheduler UiScheduler { get; set; }
-        private static UIMessages.MessageBus MessageBus { get; set; }
+        private static MessageBus MessageBus { get; set; }
 
-        public static void Init(UIMessages.MessageBus messageBus, TaskScheduler uiScheduler)
+        public static void Init(MessageBus messageBus, TaskScheduler uiScheduler)
         {
             MessageBus = messageBus;
             UiScheduler = uiScheduler;
@@ -29,9 +29,9 @@ namespace WinFwk.UIModules
             var t4 = t3.ContinueWith(t => Finish(module, finish), UiScheduler);
         }
 
-        public static void CreateModule<T>(Action<T> setup) where T : UIModule, new()
+        public static void CreateModule<T>(Action<T> setup, DockState dockState = DockState.Document) where T : UIModule, new()
         {
-            CreateModule<T>(setup, module => DockModule(module));
+            CreateModule(setup, module => DockModule(module, dockState));
         }
 
         private static void Finish<T>(T module, Action<T> finish) where T : UIModule, new()
