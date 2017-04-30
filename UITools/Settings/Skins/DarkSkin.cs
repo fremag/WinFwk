@@ -17,6 +17,9 @@ namespace WinFwk.UITools.Settings.Skins
             settings.HeaderBackColor = Color.DimGray;
             settings.HeaderForeColor= Color.White;
 
+            settings.SelectedRowBackgroundColor = Color.Gray;
+            settings.SelectedRowForegroundColor= Color.Black;
+
             settings.DockStripGradient.StartColor = Color.Gray;
             settings.DockStripGradient.EndColor = Color.Black;
             settings.DockStripGradient.LinearGradientMode = LinearGradientMode.Vertical;

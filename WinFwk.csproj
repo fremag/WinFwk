@@ -299,14 +299,12 @@
     <EmbeddedResource Include="Icons\text_exports.png" />
     <EmbeddedResource Include="Icons\tick_button.png" />
     <EmbeddedResource Include="Icons\update_contact_info.png" />
-    <None Include="Resources\bin.png" />
-    <None Include="Resources\arrow_refresh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Icons\Small\small_wrench_orange.png" />
-    <Content Include="Icons\Small\small_undo.png" />
-    <Content Include="Icons\undo.png" />
-    <Content Include="Icons\wrench_orange.png" />
+    <EmbeddedResource Include="Resources\bin.png" />
+    <EmbeddedResource Include="Resources\arrow_refresh.png" />
+    <EmbeddedResource Include="Icons\Small\small_wrench_orange.png" />
+    <EmbeddedResource Include="Icons\Small\small_undo.png" />
+    <EmbeddedResource Include="Icons\undo.png" />
+    <EmbeddedResource Include="Icons\wrench_orange.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
