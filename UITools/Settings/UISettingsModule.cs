@@ -24,8 +24,8 @@ namespace WinFwk.UITools.Settings
         {
             Type type = UISettings.Instance.GetType();
             Type mgrType = typeof (UISettingsMgr<>).MakeGenericType(type);
-            var meth = mgrType.GetMethod(nameof(UISettingsMgr<UISettings>.Save), BindingFlags.Public | BindingFlags.Static);
-            meth.Invoke(null, new object[] {Application.ProductName, UISettings.Instance});
+            var meth = mgrType.GetMethod(nameof(UISettingsMgr<UISettings>.Save), new []{ type});
+            meth.Invoke(null, new object[] {UISettings.Instance});
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
