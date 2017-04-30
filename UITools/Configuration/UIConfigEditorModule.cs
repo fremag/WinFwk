@@ -69,7 +69,8 @@ namespace WinFwk.UITools.Configuration
 
         private void tsbApply_Click(object sender, System.EventArgs e)
         {
-            ownerModule.Apply(workingCopy);
+            var config = editor.ModuleConfig;
+            ownerModule.Apply(config);
         }
     }
 }

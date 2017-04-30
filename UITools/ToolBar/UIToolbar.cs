@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -53,7 +54,7 @@ namespace WinFwk.UITools.ToolBar
                 var type = command.GetType();
                 var meth = type.GetMethod(nameof(AbstractUICommand.Run));
                 var cmd = command;
-                Button button = new Button { Text = command.Name, FlatStyle = FlatStyle.Popup };
+                UICommandButton button = new UICommandButton { Text = command.Name, FlatStyle = FlatStyle.Popup };
                 string tooltip = command.ToolTip;
                 if( command.Shortcut != Keys.None)
                 { // Todo : improve this

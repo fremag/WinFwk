@@ -12,6 +12,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 using WeifenLuo.WinFormsUI.Docking;
 using WinFwk.UICommands;
 using WinFwk.UIMessages;
+using WinFwk.UITools;
 using WinFwk.UITools.Settings;
 using WinFwk.UITools.ToolBar;
 
@@ -50,6 +51,8 @@ namespace WinFwk.UIModules
 
             RegisterSkinAction(typeof(Chart), ApplyColorsChart);
             RegisterSkinAction(typeof(ObjectListView), ApplyColorsListView);
+            RegisterSkinAction(typeof(UICommandButton), ApplyColorsNewButon);
+
         }
 
         [UIScheduler]
@@ -265,7 +268,6 @@ namespace WinFwk.UIModules
 
             toolGrad.ActiveCaptionGradient = uiSettings.ActiveCaptionGradient.TabGradient;
             toolGrad.InactiveCaptionGradient = uiSettings.InactiveCaptionGradient.TabGradient;
-
             dockPanel.Refresh();
         }
 
@@ -286,11 +288,14 @@ namespace WinFwk.UIModules
             control.ForeColor = foregroundColor;
 
             Action<Control, UISettings> skinAction;
-            if (dicoSkinActions.TryGetValue(control.GetType(), out skinAction))
-            {
-                skinAction(control, uiSettings);
+            Type controlType = control.GetType();
+            while (controlType != typeof(object)) {
+                if (dicoSkinActions.TryGetValue(controlType, out skinAction))
+                {
+                    skinAction(control, uiSettings);
+                }
+                controlType = controlType.BaseType;
             }
-            
             foreach (Control child in control.Controls)
             {
                 ApplyColors(child, uiSettings);
@@ -330,6 +335,18 @@ namespace WinFwk.UIModules
             objListView.UnfocusedSelectedForeColor = uiSettings.SelectedRowForegroundColor;
             objListView.OwnerDraw = true;
         }
+
+        private void ApplyColorsNewButon(Control control, UISettings uiSetings)
+        {
+            UICommandButton button = control as UICommandButton;
+            if( button == null)
+            {
+                return;
+            }
+
+            button.DisabledTextColor = uiSetings.DisabledTextColor;
+        }
+
 
         private void UIModuleForm_Load(object sender, EventArgs e)
         {
@@ -389,3 +406,4 @@ namespace WinFwk.UIModules
         }
     }
 }
+

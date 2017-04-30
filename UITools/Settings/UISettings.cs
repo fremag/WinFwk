@@ -77,6 +77,22 @@ namespace WinFwk.UITools.Settings
             }
         }
 
+        [XmlIgnore]
+        [Category("GUI - Main")]
+        public Color DisabledTextColor { get; set; }
+        [Browsable(false)]
+        public string DisabledTextStr
+        {
+            get
+            {
+                return WinFwkHelper.ToString(DisabledTextColor);
+            }
+            set
+            {
+                DisabledTextColor = WinFwkHelper.FromString(value);
+            }
+        }
+
         [Category("GUI - Tables")]
         public bool UseAlternateRowColor { get; set; }
         [XmlIgnore]
@@ -167,6 +183,7 @@ namespace WinFwk.UITools.Settings
         public GradientConfig ActiveCaptionGradient { get; set; }
         [Category("DockPanel - Caption")]
         public GradientConfig InactiveCaptionGradient { get; set; }
+
     }
 }
 
