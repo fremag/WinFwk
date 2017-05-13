@@ -241,6 +241,47 @@ namespace WinFwk.UIModules
             ApplyColors(mainPanel, message.UiSettings);
         }
 
+        private void ApplyTheme(DockPanel mainPanel, UISettings uiSettings)
+        {
+            switch(uiSettings.Theme)
+            {
+                case Themes.VS2003:
+                    mainPanel.Theme = new VS2003Theme();
+                    break;
+                case Themes.VS2005:
+                    mainPanel.Theme = new VS2005Theme();
+                    break;
+                case Themes.VS2012Blue:
+                    mainPanel.Theme = new VS2012BlueTheme();
+                    break;
+                case Themes.VS2012Dark:
+                    mainPanel.Theme = new VS2012DarkTheme();
+                    break;
+//                case Themes.VS2012Light:
+//                   mainPanel.Theme = new VS2012LightTheme();
+//                    break;
+//                case Themes.VS2013Blue:
+//                    mainPanel.Theme = new VS2013BlueTheme();
+//                    break;
+                case Themes.VS2013Dark:
+                    mainPanel.Theme = new VS2013DarkTheme();
+                    break;
+                case Themes.VS2013Light:
+                    mainPanel.Theme = new VS2013LightTheme();
+                    break;
+                case Themes.VS2015Blue:
+                    mainPanel.Theme = new VS2015BlueTheme();
+                    break;
+                case Themes.VS2015Dark:
+                    mainPanel.Theme = new VS2015DarkTheme();
+                    break;
+                case Themes.VS2015Light:
+                    mainPanel.Theme = new VS2015LightTheme();
+                    break;
+
+            }
+    }
+
         private static void ApplyColors(DockPanel dockPanel, UISettings uiSettings)
         {
             if(uiSettings == null)
@@ -347,9 +388,9 @@ namespace WinFwk.UIModules
             button.DisabledTextColor = uiSetings.DisabledTextColor;
         }
 
-
         private void UIModuleForm_Load(object sender, EventArgs e)
         {
+            ApplyTheme(mainPanel, UISettings.Instance);
             Text = string.Format("{0} {1} ({2})", Application.ProductName, Application.ProductVersion, Environment.Is64BitProcess ? "x64" : "x86");
             ApplyColors(mainPanel, UISettings.Instance);
         }

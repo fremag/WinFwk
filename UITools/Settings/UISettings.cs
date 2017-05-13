@@ -6,6 +6,19 @@ using WinFwk.UITools.Settings.Skins;
 
 namespace WinFwk.UITools.Settings
 {
+    public enum Themes {
+        VS2003,
+        VS2005,
+        VS2012Blue,
+        VS2012Dark,
+//        VS2012Light,
+//        VS2013Blue,
+        VS2013Dark,
+        VS2013Light,
+        VS2015Blue,
+        VS2015Dark,
+        VS2015Light
+    }
     public class UISettings
     {
         public static UISettings Instance { get; private set; }
@@ -24,6 +37,10 @@ namespace WinFwk.UITools.Settings
             ActiveCaptionGradient = new GradientConfig() { TextColor = SystemColors.ActiveCaptionText };
             InactiveCaptionGradient = new GradientConfig() { TextColor = SystemColors.InactiveCaptionText };
         }
+
+        [Category("__Global")]
+        [DisplayName("Theme - Need to save and restart")]
+        public Themes Theme { get; set; } 
 
         [Category("__Global")]
         [Editor(typeof(SkinTypeEditor), typeof(UITypeEditor))]
