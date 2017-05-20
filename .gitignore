@@ -3,13 +3,8 @@
 ################################################################################
 
 /packages
-/obj/Debug
-/bin/Debug
-/.vs/WinFwk/v14
-/bin/x86/Debug
-/obj/x86/Debug
+/.vs
 WinFwk.csproj.user
-/.vs/WinFwk/v15/.suo
-/.vs/WinFwk/v15/.suo
 /*.nupkg
-/obj/Release
+/obj
+/bin
