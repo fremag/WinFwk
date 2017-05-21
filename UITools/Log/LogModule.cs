@@ -9,6 +9,7 @@ using NLog;
 using NLog.Targets;
 using WinFwk.UIMessages;
 using WinFwk.UIModules;
+using WinFwk.UITools.Settings;
 
 namespace WinFwk.UITools.Log
 {
@@ -104,7 +105,9 @@ namespace WinFwk.UITools.Log
             if (e.Column != colLogLevel)
                 return;
 
-            e.SubItem.BackColor = GetLogLevelColor((LogLevelType) e.SubItem.ModelValue);
+            var logLevelType = (LogLevelType)e.SubItem.ModelValue;
+            e.SubItem.BackColor = GetLogLevelColor(logLevelType);
+            e.SubItem.ForeColor = GetLogLevelForeColor(logLevelType);
         }
 
         private static Color GetLogLevelColor(LogLevelType logLevel)
@@ -112,22 +115,43 @@ namespace WinFwk.UITools.Log
             switch (logLevel)
             {
                 case LogLevelType.Debug:
-                    return Color.LightSkyBlue;
+                    return UISettings.Instance.DebugColor;
                 case LogLevelType.Info:
-                    return Color.PaleGreen;
+                    return UISettings.Instance.InfoColor;
                 case LogLevelType.Warn:
-                    return Color.Yellow;
+                    return UISettings.Instance.WarnColor;
                 case LogLevelType.Error:
-                    return Color.Red;
+                    return UISettings.Instance.ErrorColor;
                 case LogLevelType.Exception:
-                    return Color.MediumPurple;
+                    return UISettings.Instance.ExceptionColor;
                 case LogLevelType.Notify:
-                    return Color.Chartreuse;
+                    return UISettings.Instance.NotifyColor;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(logLevel), logLevel, null);
             }
         }
-        
+
+        private static Color GetLogLevelForeColor(LogLevelType logLevel)
+        {
+            switch (logLevel)
+            {
+                case LogLevelType.Debug:
+                    return UISettings.Instance.DebugForeColor;
+                case LogLevelType.Info:
+                    return UISettings.Instance.InfoForeColor;
+                case LogLevelType.Warn:
+                    return UISettings.Instance.WarnForeColor;
+                case LogLevelType.Error:
+                    return UISettings.Instance.ErrorForeColor;
+                case LogLevelType.Exception:
+                    return UISettings.Instance.ExceptionForeColor;
+                case LogLevelType.Notify:
+                    return UISettings.Instance.NotifyForeColor;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(logLevel), logLevel, null);
+            }
+        }
+
         private void btnOpenLogFile_Click(object sender, EventArgs e)
         {
             foreach (var fileTarget in LogManager.Configuration.AllTargets.OfType<FileTarget>())

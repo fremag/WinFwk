@@ -201,6 +201,237 @@ namespace WinFwk.UITools.Settings
         [Category("DockPanel - Caption")]
         public GradientConfig InactiveCaptionGradient { get; set; }
 
+
+        [XmlIgnore]
+        [Category("GUI - Misc Colors")]
+        public Color DebugColor { get; set; } = Color.LightSkyBlue;
+        [Browsable(false)]
+        public string DebugColorStr
+        {
+            get
+            {
+                return WinFwkHelper.ToString(DebugColor);
+            }
+            set
+            {
+                DebugColor = WinFwkHelper.FromString(value);
+            }
+        }
+
+
+        [XmlIgnore]
+        [Category("GUI - Misc Colors")]
+        public Color InfoColor { get; set; } = Color.PaleGreen;
+        [Browsable(false)]
+        public string InfoColorStr
+        {
+            get
+            {
+                return WinFwkHelper.ToString(InfoColor);
+            }
+            set
+            {
+                InfoColor = WinFwkHelper.FromString(value);
+            }
+        }
+
+        [XmlIgnore]
+        [Category("GUI - Misc Colors")]
+        public Color ErrorColor { get; set; } = Color.Red;
+        [Browsable(false)]
+        public string ErrorColorStr
+        {
+            get
+            {
+                return WinFwkHelper.ToString(ErrorColor);
+            }
+            set
+            {
+                ErrorColor = WinFwkHelper.FromString(value);
+            }
+        }
+
+        [XmlIgnore]
+        [Category("GUI - Misc Colors")]
+        public Color OkColor { get; set; } = Color.PaleGreen;
+        [Browsable(false)]
+        public string OkColorStr
+        {
+            get
+            {
+                return WinFwkHelper.ToString(OkColor);
+            }
+            set
+            {
+                OkColor = WinFwkHelper.FromString(value);
+            }
+        }
+
+        [XmlIgnore]
+        [Category("GUI - Misc Colors")]
+        public Color WarnColor { get; set; } = Color.Yellow;
+        [Browsable(false)]
+        public string WarnColorStr
+        {
+            get
+            {
+                return WinFwkHelper.ToString(WarnColor);
+            }
+            set
+            {
+                WarnColor = WinFwkHelper.FromString(value);
+            }
+        }
+
+
+        [XmlIgnore]
+        [Category("GUI - Misc Colors")]
+        public Color ExceptionColor { get; set; } = Color.MediumPurple;
+        [Browsable(false)]
+        public string ExceptionColorStr
+        {
+            get
+            {
+                return WinFwkHelper.ToString(ExceptionColor);
+            }
+            set
+            {
+                ExceptionColor = WinFwkHelper.FromString(value);
+            }
+        }
+
+
+        [XmlIgnore]
+        [Category("GUI - Misc Colors")]
+        public Color NotifyColor { get; set; } = Color.Chartreuse;
+        [Browsable(false)]
+        public string NotifyColorStr
+        {
+            get
+            {
+                return WinFwkHelper.ToString(NotifyColor);
+            }
+            set
+            {
+                NotifyColor = WinFwkHelper.FromString(value);
+            }
+        }
+        ///////////////////////////////////////////////////////////////////////////////////////////
+
+        [XmlIgnore]
+        [Category("GUI - Misc Colors")]
+        public Color DebugForeColor { get; set; } = Color.Black;
+        [Browsable(false)]
+        public string DebugForeColorStr
+        {
+            get
+            {
+                return WinFwkHelper.ToString(DebugForeColor);
+            }
+            set
+            {
+                DebugForeColor = WinFwkHelper.FromString(value);
+            }
+        }
+
+
+        [XmlIgnore]
+        [Category("GUI - Misc Colors")]
+        public Color InfoForeColor { get; set; } = Color.Black;
+        [Browsable(false)]
+        public string InfoForeColorStr
+        {
+            get
+            {
+                return WinFwkHelper.ToString(InfoForeColor);
+            }
+            set
+            {
+                InfoForeColor = WinFwkHelper.FromString(value);
+            }
+        }
+        [XmlIgnore]
+        [Category("GUI - Misc Colors")]
+        public Color ErrorForeColor { get; set; } = Color.Black;
+        [Browsable(false)]
+        public string ErrorForeColorStr
+        {
+            get
+            {
+                return WinFwkHelper.ToString(ErrorForeColor);
+            }
+            set
+            {
+                ErrorForeColor = WinFwkHelper.FromString(value);
+            }
+        }
+
+        [XmlIgnore]
+        [Category("GUI - Misc Colors")]
+        public Color OkForeColor { get; set; } = Color.Black;
+        [Browsable(false)]
+        public string OkForeColorStr
+        {
+            get
+            {
+                return WinFwkHelper.ToString(OkForeColor);
+            }
+            set
+            {
+                OkForeColor = WinFwkHelper.FromString(value);
+            }
+        }
+
+        [XmlIgnore]
+        [Category("GUI - Misc Colors")]
+        public Color WarnForeColor { get; set; } = Color.Black;
+        [Browsable(false)]
+        public string WarnForeColorStr
+        {
+            get
+            {
+                return WinFwkHelper.ToString(WarnForeColor);
+            }
+            set
+            {
+                WarnForeColor = WinFwkHelper.FromString(value);
+            }
+        }
+
+
+        [XmlIgnore]
+        [Category("GUI - Misc Colors")]
+        public Color ExceptionForeColor { get; set; } = Color.Black;
+        [Browsable(false)]
+        public string ExceptionForeColorStr
+        {
+            get
+            {
+                return WinFwkHelper.ToString(ExceptionForeColor);
+            }
+            set
+            {
+                ExceptionForeColor = WinFwkHelper.FromString(value);
+            }
+        }
+
+
+        [XmlIgnore]
+        [Category("GUI - Misc Colors")]
+        public Color NotifyForeColor { get; set; } = Color.Black;
+        [Browsable(false)]
+        public string NotifyForeColorStr
+        {
+            get
+            {
+                return WinFwkHelper.ToString(NotifyForeColor);
+            }
+            set
+            {
+                NotifyForeColor = WinFwkHelper.FromString(value);
+            }
+        }
+
     }
 }
 
