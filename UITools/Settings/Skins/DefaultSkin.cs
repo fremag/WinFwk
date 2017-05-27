@@ -40,6 +40,9 @@ namespace WinFwk.UITools.Settings.Skins
             settings.InactiveCaptionGradient.EndColor = SystemColors.InactiveCaption;
             settings.InactiveCaptionGradient.LinearGradientMode = LinearGradientMode.Vertical;
             settings.InactiveCaptionGradient.TextColor = SystemColors.InactiveCaptionText;
+
+            settings.TitleBackColor = SystemColors.Control;
+            settings.TitleForeColor = SystemColors.ActiveCaptionText;
         }
     }
 }

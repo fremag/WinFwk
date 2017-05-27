@@ -225,6 +225,9 @@
     </Compile>
     <Compile Include="UITools\Settings\UISettingsChangedMessage.cs" />
     <Compile Include="UIModules\StatusMessage.cs" />
+    <Compile Include="UITools\ToolBar\RoundCornerGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UITools\ToolBar\UICommandbutton.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -8,7 +8,7 @@ namespace WinFwk.UICommands
     {
         public T TypedModule { get; private set; }
 
-        protected AbstractTypedUICommand(string name, string toolTip, string group, Image icon, Keys shortcut=Keys.None ) : base(name, toolTip, group, icon, shortcut)
+        protected AbstractTypedUICommand(string name, string toolTip, string group, Image icon, Keys shortcut=Keys.None, string subGroup=null ) : base(name, toolTip, group, icon, shortcut, subGroup)
         {
             Enabled = false;
         }

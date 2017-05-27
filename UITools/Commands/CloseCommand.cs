@@ -8,7 +8,7 @@ namespace WinFwk.UITools.Commands
 {
     public class CloseCommand : AbstractVoidUICommand
     {
-        public CloseCommand() : base("Close", "Close selected module", UIToolBarSettings.Main.Name, Properties.Resources.cross, Keys.Control | Keys.Shift | Keys.W)
+        public CloseCommand() : base("Close", "Close selected module", UIToolBarSettings.Main.Name, Properties.Resources.cross, Keys.Control | Keys.Shift | Keys.W, UIToolBarSettings.SubGroupView)
         {
 
         }

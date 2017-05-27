@@ -432,6 +432,39 @@ namespace WinFwk.UITools.Settings
             }
         }
 
+
+        [XmlIgnore]
+        [Category("GUI - Toolbars Colors")]
+        public Color TitleForeColor { get; set; } = SystemColors.MenuText;
+        [Browsable(false)]
+        public string TitleForeColorStr
+        {
+            get
+            {
+                return WinFwkHelper.ToString(TitleForeColor);
+            }
+            set
+            {
+                TitleForeColor = WinFwkHelper.FromString(value);
+            }
+        }
+
+
+        [XmlIgnore]
+        [Category("GUI - Toolbars Colors")]
+        public Color TitleBackColor { get; set; } = SystemColors.Control;
+        [Browsable(false)]
+        public string TitleBackColorStr
+        {
+            get
+            {
+                return WinFwkHelper.ToString(TitleBackColor);
+            }
+            set
+            {
+                TitleBackColor = WinFwkHelper.FromString(value);
+            }
+        }
     }
 }
 

@@ -12,7 +12,6 @@ using System.Windows.Forms.DataVisualization.Charting;
 using WeifenLuo.WinFormsUI.Docking;
 using WinFwk.UICommands;
 using WinFwk.UIMessages;
-using WinFwk.UITools;
 using WinFwk.UITools.Settings;
 using WinFwk.UITools.ToolBar;
 
@@ -51,8 +50,8 @@ namespace WinFwk.UIModules
 
             RegisterSkinAction(typeof(Chart), ApplyColorsChart);
             RegisterSkinAction(typeof(ObjectListView), ApplyColorsListView);
-            RegisterSkinAction(typeof(UICommandButton), ApplyColorsNewButon);
-
+            RegisterSkinAction(typeof(UICommandButton), ApplyColorsUICommandButton);
+            RegisterSkinAction(typeof(RoundCornerGroupBox), ApplyColorsRoundCornerGroupBox);
         }
 
         [UIScheduler]
@@ -377,7 +376,7 @@ namespace WinFwk.UIModules
             objListView.OwnerDraw = true;
         }
 
-        private void ApplyColorsNewButon(Control control, UISettings uiSetings)
+        private void ApplyColorsUICommandButton(Control control, UISettings uiSetings)
         {
             UICommandButton button = control as UICommandButton;
             if( button == null)
@@ -387,6 +386,19 @@ namespace WinFwk.UIModules
 
             button.DisabledTextColor = uiSetings.DisabledTextColor;
         }
+
+        private void ApplyColorsRoundCornerGroupBox(Control control, UISettings uiSetings)
+        {
+            var groupBox = control as RoundCornerGroupBox;
+            if( groupBox == null)
+            {
+                return;
+            }
+
+            groupBox.TitleBackColor = uiSetings.TitleBackColor;
+            groupBox.TitleForeColor = uiSetings.TitleForeColor;
+        }
+
 
         private void UIModuleForm_Load(object sender, EventArgs e)
         {

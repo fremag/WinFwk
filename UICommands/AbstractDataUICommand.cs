@@ -8,7 +8,7 @@ namespace WinFwk.UICommands
     {
         protected UIDataProvider<T> dataProvider;
 
-        protected AbstractDataUICommand(string name, string toolTip, string group, Image icon, Keys shortcut=Keys.None ) : base(name, toolTip, group, icon, shortcut)
+        protected AbstractDataUICommand(string name, string toolTip, string group, Image icon, Keys shortcut=Keys.None, string subGroup = null) : base(name, toolTip, group, icon, shortcut, subGroup)
         {
             Enabled = false;
         }

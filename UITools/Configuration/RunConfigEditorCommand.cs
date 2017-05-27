@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 using WinFwk.UICommands;
 using WinFwk.UIMessages;
@@ -12,7 +13,7 @@ namespace WinFwk.UITools.Configuration
         public readonly static Image LargeIcon = Properties.Resources.wrench_orange;
         public readonly static Image SmallIcon = Properties.Resources.small_wrench_orange;
 
-        public RunConfigEditorCommand() : base("Config", "Edit module's configuration", UIToolBarSettings.Main.Name, LargeIcon)
+        public RunConfigEditorCommand() : base("Config", "Edit module's configuration", UIToolBarSettings.Main.Name, LargeIcon, Keys.None, UIToolBarSettings.SubGroupOptions)
         {
         }
 

@@ -12,6 +12,7 @@ namespace WinFwk.UICommands
         // Properties
         public string Name { get; private set; }
         public string Group { get; private set; }
+        public string SubGroup { get; private set; }
         public string ToolTip { get; private set; }
         public Image Icon { get; private set; }
         public bool Enabled { get; protected set; }
@@ -20,11 +21,12 @@ namespace WinFwk.UICommands
 
         protected UIModule selectedModule;
 
-        protected AbstractUICommand(string name, string toolTip, string group, Image icon, Keys shortcut=Keys.None)
+        protected AbstractUICommand(string name, string toolTip, string group, Image icon, Keys shortcut=Keys.None, string subGroup=null)
         {
             Name = name;
             ToolTip = toolTip;
             Group = group;
+            SubGroup = subGroup;
             Icon = icon;
             Shortcut = shortcut;
         }

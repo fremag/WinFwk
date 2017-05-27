@@ -30,10 +30,10 @@ namespace WinFwk.UITools.Settings.Skins
             settings.ActiveTabGradient.LinearGradientMode = LinearGradientMode.Vertical;
             settings.ActiveTabGradient.TextColor = Color.White;
 
-            settings.InactiveTabGradient.StartColor = Color.Gray;
+            settings.InactiveTabGradient.StartColor = Color.DimGray;
             settings.InactiveTabGradient.EndColor = Color.Black;
             settings.InactiveTabGradient.LinearGradientMode = LinearGradientMode.Vertical;
-            settings.InactiveTabGradient.TextColor = Color.White;
+            settings.InactiveTabGradient.TextColor = Color.Gray;
 
             settings.ActiveCaptionGradient.StartColor = Color.Gray;
             settings.ActiveCaptionGradient.EndColor = Color.Black;
@@ -44,6 +44,9 @@ namespace WinFwk.UITools.Settings.Skins
             settings.InactiveCaptionGradient.EndColor = Color.Black;
             settings.InactiveCaptionGradient.LinearGradientMode = LinearGradientMode.Vertical;
             settings.InactiveCaptionGradient.TextColor = Color.White;
+
+            settings.TitleBackColor = Color.DimGray;
+            settings.TitleForeColor = Color.White;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace WinFwk.UITools.Commands
 {
     public class ExportCommand : AbstractTypedUICommand<IDataExportable>
     {
-        public ExportCommand() : base("Export", "Export data to file", UIToolBarSettings.Main.Name, Properties.Resources.text_exports, Keys.Control | Keys.Shift | Keys.E)
+        public ExportCommand() : base("Export", "Export data to file", UIToolBarSettings.Main.Name, Properties.Resources.text_exports, Keys.Control | Keys.Shift | Keys.E, UIToolBarSettings.SubGroupData)
         {
 
         }
