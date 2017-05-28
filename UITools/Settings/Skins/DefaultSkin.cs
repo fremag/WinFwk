@@ -43,6 +43,11 @@ namespace WinFwk.UITools.Settings.Skins
 
             settings.TitleBackColor = SystemColors.Control;
             settings.TitleForeColor = SystemColors.ActiveCaptionText;
+
+            settings.LineColor = SystemColors.Control;
+            settings.SelectedItemColor = SystemColors.Highlight;
+            settings.SelectedItemTextColor = SystemColors.HighlightText;
+
         }
     }
 }

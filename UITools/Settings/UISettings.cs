@@ -431,6 +431,7 @@ namespace WinFwk.UITools.Settings
                 NotifyForeColor = WinFwkHelper.FromString(value);
             }
         }
+        ///////////////////////////////////////////////////////////////////////////////////////////
 
 
         [XmlIgnore]
@@ -463,6 +464,53 @@ namespace WinFwk.UITools.Settings
             set
             {
                 TitleBackColor = WinFwkHelper.FromString(value);
+            }
+        }
+        ///////////////////////////////////////////////////////////////////////////////////////////
+        [XmlIgnore]
+        [Category("GUI - PropertyGrids Colors")]
+        public Color LineColor { get; set; } = SystemColors.Control;
+        [Browsable(false)]
+        public string LineColorStr
+        {
+            get
+            {
+                return WinFwkHelper.ToString(LineColor);
+            }
+            set
+            {
+                LineColor = WinFwkHelper.FromString(value);
+            }
+        }
+
+        [XmlIgnore]
+        [Category("GUI - PropertyGrids Colors")]
+        public Color SelectedItemColor { get; set; } = SystemColors.Control;
+        [Browsable(false)]
+        public string ColorStr
+        {
+            get
+            {
+                return WinFwkHelper.ToString(SelectedItemColor);
+            }
+            set
+            {
+                SelectedItemColor = WinFwkHelper.FromString(value);
+            }
+        }
+        [XmlIgnore]
+        [Category("GUI - PropertyGrids Colors")]
+        public Color SelectedItemTextColor { get; set; } = SystemColors.MenuText;
+        [Browsable(false)]
+        public string SelectedItemTextColorStr
+        {
+            get
+            {
+                return WinFwkHelper.ToString(SelectedItemTextColor);
+            }
+            set
+            {
+                SelectedItemTextColor = WinFwkHelper.FromString(value);
             }
         }
     }

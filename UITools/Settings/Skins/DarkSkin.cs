@@ -47,6 +47,10 @@ namespace WinFwk.UITools.Settings.Skins
 
             settings.TitleBackColor = Color.DimGray;
             settings.TitleForeColor = Color.White;
+
+            settings.LineColor = Color.DimGray;
+            settings.SelectedItemColor = Color.LightGray;
+            settings.SelectedItemTextColor = Color.Black;
         }
     }
 }

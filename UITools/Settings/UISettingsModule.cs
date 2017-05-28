@@ -18,6 +18,7 @@ namespace WinFwk.UITools.Settings
         private void UIConfigModule_Load(object sender, EventArgs e)
         {
             pgUiSettings.SelectedObject = UISettings.Instance;
+            pgUiSettings.CollapseAllGridItems();
         }
 
         private void btnSaveSettings_Click(object sender, EventArgs e)

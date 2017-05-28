@@ -52,6 +52,7 @@ namespace WinFwk.UIModules
             RegisterSkinAction(typeof(ObjectListView), ApplyColorsListView);
             RegisterSkinAction(typeof(UICommandButton), ApplyColorsUICommandButton);
             RegisterSkinAction(typeof(RoundCornerGroupBox), ApplyColorsRoundCornerGroupBox);
+            RegisterSkinAction(typeof(PropertyGrid), ApplyColorsPropertyGrid);
         }
 
         [UIScheduler]
@@ -399,6 +400,18 @@ namespace WinFwk.UIModules
             groupBox.TitleForeColor = uiSetings.TitleForeColor;
         }
 
+        private void ApplyColorsPropertyGrid(Control control, UISettings uiSetings)
+        {
+            var propertyGrid = control as PropertyGrid;
+            if (propertyGrid == null)
+            {
+                return;
+            }
+
+            propertyGrid.LineColor = uiSetings.LineColor;
+            propertyGrid.SelectedItemWithFocusBackColor = uiSetings.SelectedItemColor;
+            propertyGrid.SelectedItemWithFocusForeColor = uiSetings.SelectedItemTextColor;
+        }
 
         private void UIModuleForm_Load(object sender, EventArgs e)
         {
