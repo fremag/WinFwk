@@ -13,5 +13,10 @@ namespace WinFwk.UIModules
             UIModule = uiModule;
             DockState = dockState;
         }
+
+        public override string ToString()
+        {
+            return $"DockState: {DockState}, Module: {UIModule.Name}";
+        }
     }
 }

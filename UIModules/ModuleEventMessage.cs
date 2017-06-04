@@ -19,5 +19,10 @@ namespace WinFwk.UIModules
             Module = module;
             ModuleEvent = moduleEvent;
         }
+
+        public override string ToString()
+        {
+            return $"Event: {ModuleEvent}, module: {Module.Name}";
+        }
     }
 }

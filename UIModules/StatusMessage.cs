@@ -19,6 +19,11 @@ namespace WinFwk.UIModules
         {
             CancellationTokenSource = cancellationTokenSource;
         }
+
+        public override string ToString()
+        {
+            return $"Status: {Status}, Text: '{Text}'";
+        }
     }
 
     public static class StatusMessageHelper {

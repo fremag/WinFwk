@@ -128,6 +128,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UICommands\UIDataProvider.cs" />
     <Compile Include="UIMessages\AbstractUIMessage.cs" />
+    <Compile Include="UIMessages\UIMessageInfo.cs" />
     <Compile Include="UIMessages\UIScheduler.cs" />
     <Compile Include="UIModules\CloseRequest.cs" />
     <Compile Include="UIModules\UIModule.cs">
@@ -191,6 +192,20 @@
       <DependentUpon>UIConfigurationModule.cs</DependentUpon>
     </Compile>
     <Compile Include="UITools\ListViewHelpers.cs" />
+    <Compile Include="UITools\Messages\MessageBusLogCommand.cs" />
+    <Compile Include="UITools\Messages\MessageBusCommand.cs" />
+    <Compile Include="UITools\Messages\MessageBusLogModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UITools\Messages\MessageBusLogModule.Designer.cs">
+      <DependentUpon>MessageBusLogModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UITools\Messages\MessageBusModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UITools\Messages\MessageBusModule.Designer.cs">
+      <DependentUpon>MessageBusModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="UITools\PercentColumnAttribute.cs" />
     <Compile Include="UITools\DoubleColumnAttribute.cs" />
     <Compile Include="UITools\IntColumnAttribute.cs" />
@@ -286,6 +301,12 @@
     <EmbeddedResource Include="UITools\Log\LogModule.resx">
       <DependentUpon>LogModule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UITools\Messages\MessageBusLogModule.resx">
+      <DependentUpon>MessageBusLogModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UITools\Messages\MessageBusModule.resx">
+      <DependentUpon>MessageBusModule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UITools\ToolBar\UIToolbar.resx">
       <DependentUpon>UIToolbar.cs</DependentUpon>
     </EmbeddedResource>
@@ -324,6 +345,12 @@
     <EmbeddedResource Include="Icons\Small\small_undo.png" />
     <EmbeddedResource Include="Icons\undo.png" />
     <EmbeddedResource Include="Icons\wrench_orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icons\chart_organisation.png" />
+    <Content Include="Icons\raw_access_logs.png" />
+    <Content Include="Icons\Small\small_raw_access_logs.png" />
+    <Content Include="Icons\Small\small_chart_organisation.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

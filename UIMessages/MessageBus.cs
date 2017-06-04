@@ -11,7 +11,9 @@ namespace WinFwk.UIMessages
         private readonly Dictionary<Type, List<object>> dicoSubscribers = new Dictionary<Type, List<object>>();
         private TaskScheduler uiScheduler;
         private TaskFactory taskFactory;
+
         public event Action<Exception, object> ExceptionRaised;
+        public event Action<UIMessageInfo> MessageSent;
 
         public TaskScheduler UiScheduler
         {
@@ -23,7 +25,9 @@ namespace WinFwk.UIMessages
             }
         }
 
-        internal static IEnumerable<Type> GetMessageTypes(object subscriber)
+        public IEnumerable<Type> GetMessageTypes() => dicoSubscribers.Keys;
+
+        public static IEnumerable<Type> GetMessageTypes(object subscriber)
         {
             List<Type> types = WinFwkHelper.GetGenericInterfaceArguments(subscriber, typeof (IMessageListener<>));
             return types;
@@ -79,6 +83,8 @@ namespace WinFwk.UIMessages
 
         public void SendMessage<T>(T message) where T : AbstractUIMessage
         {
+            MessageSent?.Invoke(new UIMessageInfo(message));
+
             List<object> subscribers = GetSubscribers(typeof (T));
             if (subscribers.Count == 0)
             {

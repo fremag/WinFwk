@@ -24,5 +24,10 @@ namespace WinFwk.UITools.Log
             LogLevel = logLevel;
             Text = text;
         }
+
+        public override string ToString()
+        {
+            return $"Level: ${LogLevel}, Logger: ${LoggerName}, Text: '{Text}'";
+        }
     }
 }

@@ -10,5 +10,9 @@ namespace WinFwk.UIModules
         {
             Module = module;
         }
+        public override string ToString()
+        {
+            return $"Module: {Module.Name}";
+        }
     }
 }
