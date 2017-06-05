@@ -33,8 +33,8 @@ namespace WinFwk.UITools.Settings
         {
             Type type = UISettings.Instance.GetType();
             Type mgrType = typeof(UISettingsMgr<>).MakeGenericType(type);
-            var meth = mgrType.GetMethod(nameof(UISettingsMgr<UISettings>.Load), BindingFlags.Public | BindingFlags.Static);
-            var res = meth.Invoke(null, new object[] { Application.ProductName});
+            var meth = mgrType.GetMethod(nameof(UISettingsMgr<UISettings>.Load), new Type[0]);
+            var res = meth.Invoke(null, null);
             UISettings.InitSettings((UISettings)res);
             pgUiSettings.SelectedObject = UISettings.Instance;
         }

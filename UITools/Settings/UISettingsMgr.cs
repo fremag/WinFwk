@@ -58,9 +58,9 @@ namespace WinFwk.UITools.Settings
             Init(Application.ProductName);
         }
 
-        public static void Load()
+        public static T Load()
         {
-            Load(Application.ProductName);
+            return Load(Application.ProductName);
         }
 
         public static void Save(T uiSettings)
